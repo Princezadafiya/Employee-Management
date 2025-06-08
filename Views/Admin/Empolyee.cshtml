@@ -1,0 +1,123 @@
+﻿@{
+    Layout = "Dashboard";
+}
+
+
+@model List<Login>
+
+
+<style>
+    .main {
+        flex-grow: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    .main-content {
+        margin-left: 250px;
+        padding-top: 60px; 
+    }
+
+    header {
+        width: 100%;
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .table {
+        width: 90%; 
+        border-collapse: collapse;
+        background: white;
+        margin-top: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative; 
+    }
+
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table th {
+            background-color: #343a40;
+            color: white;
+            font-weight: bold;
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #f8f9fa;
+        }
+
+        .table tbody tr:hover {
+            background-color: #e9ecef;
+            transition: 0.3s ease-in-out;
+        }
+
+    td {
+        text-align: center; 
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+
+<div class="main">
+   <h1>Approved Employee</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>EmployeeId</th>
+                <th>FirstName</th>
+                <th>Email</th>
+                <th>PhoneNumber</th>
+                <th>Gender</th>
+                <th>Designation</th>
+                <th>Employment Type</th>
+                <th>Nationality</th>
+                <th>Work Experience</th>
+                <th>Salary & department</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EmployeeId</td>
+                    <td>@item.FirstName  @item.LastName</td>
+                    <td>@item.Email</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Gender</td>
+                    <td>@item.Designation</td>
+                    <td>@item.EmploymentType</td>
+                    <td>@item.Nationality</td>
+                    <td>@item.WorkExperience</td>
+                    <td>
+                        <form method="post" asp-action="Adddata">
+                            <input type="hidden" name="id" value="@item.EmployeeId" />
+                            <button class="button" type="submit">Action</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,152 @@
+﻿<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, #2c3e50, #4ca1af);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .login-box {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 50px;
+        border-radius: 15px;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        width: 400px;
+        text-align: center;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+    }
+
+    body.loaded .login-box {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .login-box h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #ffffff;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+        transition: color 0.3s ease-in-out;
+    }
+
+    .input-group {
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 16px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease;
+        }
+
+            .input-group input::placeholder {
+                color: #e0e0e0;
+            }
+
+            .input-group input:focus {
+                background: rgba(255, 255, 255, 0.3);
+                outline: none;
+            }
+
+        .input-group button {
+            width: 100%;
+            padding: 15px;
+            background: #4ca1af;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+
+            .input-group button:hover {
+                background: #2c3e50;
+            }
+
+    .register-link {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+        .register-link a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+            .register-link a:hover {
+                text-decoration: underline;
+            }
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form asp-action="LoginUser" method="post">
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Enter Your Email" required />
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Enter Your Password" required />
+                </div>
+                <div class="input-group">
+                    <button type="submit">Login</button>
+                </div>
+                <div class="register-link">
+                    <a href="/Login/Register">Don't have an account? Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "Dashboard";
+}
+
+
+
+
+
+<style>
+	.hero {
+		background: url('hero-bg.jpg') no-repeat center center/cover;
+		height: 80vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: black;
+	}
+
+	.hero-content {
+		max-width: 700px;
+	}
+	 
+	.hero-content h1
+	{
+		font-size:40px;
+	}
+
+	
+	
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+	<section class="hero" id="home">
+		<div class="hero-content">
+			<h1>Welcome, AdminPanel</h1>
+		</div>
+	</section>
+
+	<script>
+		$(document).ready(function () {
+			$('.hero-content').hide().fadeIn(1500);
+			$('.hero-btn').hide().fadeIn(2500);
+		});
+	</script>
+</body>
+</html>

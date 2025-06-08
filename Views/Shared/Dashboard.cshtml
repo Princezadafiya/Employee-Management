@@ -1,0 +1,194 @@
+﻿@* 
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        margin: 0;
+    }
+
+    .sidebar {
+        width: 250px;
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+        height: 100vh;
+        position: fixed; /* Keeps it in place */
+        left: 0;
+    }
+
+    header {
+        width: calc(100% - 250px); /* Adjusts to sidebar width */
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        position: fixed; /* Keeps it fixed at the top */
+        top: 0;
+        left: 250px;
+    }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+            .sidebar ul li {
+                margin: 10px 0;
+            }
+
+                .sidebar ul li a {
+                    color: white;
+                    text-decoration: none;
+                    display: block;
+                    padding: 8px;
+                    transition: 0.3s;
+                }
+
+                    .sidebar ul li a:hover {
+                        background-color: #34495e;
+                    }
+
+    .main {
+        flex-grow: 1;
+        padding: 20px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f1f1f1;
+        padding: 10px;
+    }
+</style>
+
+
+
+<div class="sidebar">
+    <h2>Travel Manager</h2>
+    <ul>
+        <li><a href="/Admin/Viewregistration">View Registration</a></li>
+        <li><a href="/Admin/Empolyee">Approved Employee</a></li>
+        <li><a href="/Admin/Report">Report</a></li>
+    </ul>
+</div>
+
+@* <div class="main">
+    <header>
+        <h1>Welcome, Admin</h1>
+        <button id="refresh">Refresh Data</button>
+    </header>
+</div> *@
+
+
+       
+
+
+
+
+<style>
+    /* Universal Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+        padding-top: 80px; /* Adjust based on the height of the header */
+    }
+
+    /* Header Styles */
+    header {
+        background: linear-gradient(to right, #2c3e50, #4ca1af);
+        padding: 1rem 0;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .logo h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        color: white;
+    }
+
+    .nav-links {
+        list-style: none;
+    }
+
+        .nav-links li {
+            display: inline;
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: text-decoration 0.3s;
+        }
+
+    .logo a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: text-decoration 0.3s;
+    }
+
+
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+
+    .content {
+        padding: 2rem;
+    }
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><a href="/Admin/Welcomeadmin">Admin</a></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/Admin/Viewregistration">View Registration</a></li>
+                <li><a href="/Admin/Empolyee">Approved Employee</a></li>
+                <li><a href="/Admin/Report">Report</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+</body>
+</html>
+
+
+
+@RenderBody()

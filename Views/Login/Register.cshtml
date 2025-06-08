@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            overflow: hidden; 
+            padding: 40px 0;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            width: 800px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+            .login-box h2 {
+                font-size: 32px;
+                color: #FFf;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+                margin-bottom: 30px;
+            }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px;
+        }
+
+        
+        .input-group {
+            width: 100%;
+        }
+
+            .input-group input,
+            .input-group select {
+                width: 100%;
+                padding: 12px;
+                font-size: 14px;
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.3);
+                color: #000000;
+                border: 1px solid rgba(255, 255, 255, 0.6);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            }
+
+                .input-group input::placeholder,
+                .input-group select::placeholder {
+                    color: #000;
+                    opacity: 1;
+                }
+
+        .button-group {
+            padding-top: 20px;
+        }
+
+            .button-group button {
+                width: 30%;
+                padding: 14px;
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-radius: 6px;
+                border: none;
+                cursor: pointer;
+                background: #4ca1af; 
+                color: #fff;
+            }
+
+                .button-group button:hover {
+                    background: #2c3e50; 
+                }
+
+
+
+        .register-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+            .register-link a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .register-link a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Register</h2>
+            <form asp-action="RegisterUser" method="post">
+                <div class="form-container">
+                    <input type="hidden" name="employeeId" placeholder="Employee ID" readonly />
+
+                    <div class="input-group">
+                        <input type="text" name="firstName" placeholder="First Name" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="lastName" placeholder="Last Name" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Email Address" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" name="phoneNumber" placeholder="Phone Number" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="date" name="dob" placeholder="Date of Birth" required />
+                    </div>
+                    <div class="input-group">
+                        <select name="gender" required>
+                            <option value="" disabled selected>Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="designation" placeholder="Designation" required />
+                    </div>
+                    <div class="input-group">
+                        <select name="employmentType" required>
+                            <option value="" disabled selected>Employment Type</option>
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                            <option value="Contract">Contract</option>
+                            <option value="Intern">Intern</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" placeholder="Password" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="confirmPassword" placeholder="Confirm Password" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="emergencyContact" placeholder="Emergency Contact" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="file" name="profilePicture" placeholder="Profile Picture " />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="skills" placeholder="Skills" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="nationality" placeholder="Nationality" required />
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="workExperience" placeholder="Work Experience (Years)" required />
+                    </div>
+
+                </div>
+                <div class="button-group">
+                    <button type="submit">Register</button>
+                </div>
+                <div class="register-link">
+                    <a href="/Login">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
